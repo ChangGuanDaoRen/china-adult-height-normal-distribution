@@ -13,7 +13,7 @@
 - 最终稿（Word）：`paper/正态分布在现实数据分析中的应用_基于中国成年人身高数据的案例分析.docx`
 - 最终稿（PDF）：`paper/正态分布在现实数据分析中的应用_基于中国成年人身高数据的案例分析.pdf`
 
-> 封面署名：作者 赵浩、章轩睿；学号 U202541916、U202541911；日期 2026年9月26日。
+> 封面署名：作者 赵浩、张璐玺；学号 U202541916、U202541915；日期 2026年9月26日。
 
 ---
 
@@ -22,7 +22,7 @@
 | 成员 | 学号 |
 | --- | --- |
 | 赵浩 | U202541916 |
-| 章轩睿 | U202541911 |
+| 张璐玺 | U202541915 |
 
 完成日期：2026年9月26日
 
@@ -111,11 +111,11 @@ china-adult-height-normal-distribution/
 └── README.md              # 本文件
 ```
 
-### `presentation/`（课堂汇报，共 11 页）
+### `presentation/`（课堂汇报，共 10 页）
 
 | 文件 | 说明 |
 | --- | --- |
-| `probability-statistics-course-presentation.pptx` | 课堂汇报幻灯片（16:9，共 11 页），公式为矢量排版，可直接放映 |
+| `probability-statistics-course-presentation.pptx` | 课堂汇报幻灯片（16:9，共 10 页），公式采用高清数学排版，可直接放映 |
 | `probability-statistics-course-presentation.pdf` | 与 pptx 逐页一致的 PDF 版（便于打印与投屏备份） |
 | `presentation_script.md` | 逐页讲解稿（6～10 分钟口语稿，含备答 Q1～Q4） |
 
