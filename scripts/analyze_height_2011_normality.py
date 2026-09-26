@@ -264,11 +264,12 @@ def make_qqplot(
 
 # 论文插图编号：图5-1 男性直方图 / 图5-2 女性直方图
 #               图5-3 男性 Q-Q 图 / 图5-4 女性 Q-Q 图
+# 输出文件名与仓库 outputs/ 中正式文件保持完全一致
 FIGURE_NAMES = {
-    ("Male", "hist"): "fig5_1_CHNS_2011_Male_histogram.png",
-    ("Female", "hist"): "fig5_2_CHNS_2011_Female_histogram.png",
-    ("Male", "QQ"): "fig5_3_CHNS_2011_Male_QQ.png",
-    ("Female", "QQ"): "fig5_4_CHNS_2011_Female_QQ.png",
+    ("Male", "hist"): "fig5_1_2011_CHNS_male_histogram.png",
+    ("Female", "hist"): "fig5_2_2011_CHNS_female_histogram.png",
+    ("Male", "QQ"): "fig5_3_2011_CHNS_male_qq.png",
+    ("Female", "QQ"): "fig5_4_2011_CHNS_female_qq.png",
 }
 
 
@@ -432,14 +433,46 @@ def main():
         columns
     ]
 
-    # 该 CSV 同时给出论文表5-1（描述统计）与表5-2（正态性分析）的数值
-    output = (
+    # 表 5-2：正态性检验结果（与仓库 outputs/ 正式文件同名同格式）
+    output_t52 = (
         OUTPUT_DIR
-        / "table5_1_2_CHNS_2011_normality.csv"
+        / "table5_2_2011_CHNS_20_24_normality_test.csv"
     )
 
     result_df.to_csv(
-        output,
+        output_t52,
+        index=False,
+        encoding="utf-8-sig"
+    )
+
+    # 表 5-1：描述统计量（与仓库 outputs/ 正式文件同名同格式）
+    male = results[0]
+    female = results[1]
+
+    desc_rows = [
+        ("样本量 n", f"{male['n']:d}", f"{female['n']:d}"),
+        ("均值（厘米）", f"{male['mean_cm']:.4f}", f"{female['mean_cm']:.4f}"),
+        ("中位数（厘米）", f"{male['median_cm']:.4f}", f"{female['median_cm']:.4f}"),
+        ("方差（平方厘米）", f"{male['variance_cm2']:.4f}", f"{female['variance_cm2']:.4f}"),
+        ("标准差（厘米）", f"{male['std_cm']:.4f}", f"{female['std_cm']:.4f}"),
+        ("偏度", f"{male['skew']:.4f}", f"{female['skew']:.4f}"),
+        ("超额峰度", f"{male['excess_kurtosis']:.4f}", f"{female['excess_kurtosis']:.4f}"),
+        ("最小值（厘米）", f"{male['min_cm']:.4f}", f"{female['min_cm']:.4f}"),
+        ("最大值（厘米）", f"{male['max_cm']:.4f}", f"{female['max_cm']:.4f}"),
+    ]
+
+    desc_df = pd.DataFrame(
+        desc_rows,
+        columns=["统计量", "男性", "女性"]
+    )
+
+    output_t51 = (
+        OUTPUT_DIR
+        / "table5_1_2011_CHNS_20_24_descriptive_statistics.csv"
+    )
+
+    desc_df.to_csv(
+        output_t51,
         index=False,
         encoding="utf-8-sig"
     )
@@ -451,7 +484,12 @@ def main():
 
     print(
         "\n结果表：",
-        output
+        output_t51
+    )
+
+    print(
+        "结果表：",
+        output_t52
     )
 
     print(
