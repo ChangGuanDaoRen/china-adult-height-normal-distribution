@@ -117,7 +117,7 @@ china-adult-height-normal-distribution/
 | --- | --- |
 | `probability-statistics-course-presentation.pptx` | 课堂汇报幻灯片（16:9，共 10 页），公式采用高清数学排版，可直接放映 |
 | `probability-statistics-course-presentation.pdf` | 与 pptx 逐页一致的 PDF 版（便于打印与投屏备份） |
-| `presentation_script.md` | 逐页讲解稿（6～10 分钟口语稿，含备答 Q1～Q4） |
+| `presentation_script.md` | 逐页讲解稿（约 5 分钟单人汇报口语稿，含备答 Q1～Q4） |
 
 幻灯片共 10 页，叙事主线为：现实问题 → 正态理论 → 数据总体 → 样本形成与描述统计 → 直方图 → Q-Q 图与 Shapiro-Wilk 检验 → 3σ 原则对比 → 价值与局限 → 结论。全部统计数字与论文最终稿一致；图 5-1～5-4 直接采用 `outputs/` 中的四张正式图；汇报措辞与论文保持一致（"不能拒绝原假设 / 拒绝原假设 / 近似描述"，不表述为"证明正态"）。
 
